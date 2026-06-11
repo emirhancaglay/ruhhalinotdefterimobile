@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="24dp"
+    android:background="#FFFFFF">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="İstatistikler"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        android:gravity="center"
+        android:layout_marginBottom="24dp" />
+
+    <TextView
+        android:id="@+id/totalText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Toplam günlük sayısı: 0"
+        android:textSize="17sp"
+        android:layout_marginBottom="8dp" />
+
+    <TextView
+        android:id="@+id/favoriteCountText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Toplam favori günlük: 0"
+        android:textSize="17sp"
+        android:layout_marginBottom="12dp" />
+
+    <TextView
+        android:id="@+id/mutluText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Mutlu: 0"
+        android:textSize="17sp"
+        android:layout_marginBottom="8dp" />
+
+    <TextView
+        android:id="@+id/normalText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Normal: 0"
+        android:textSize="17sp"
+        android:layout_marginBottom="8dp" />
+
+    <TextView
+        android:id="@+id/yorgunText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Yorgun: 0"
+        android:textSize="17sp"
+        android:layout_marginBottom="8dp" />
+
+    <TextView
+        android:id="@+id/uzgunText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Üzgün: 0"
+        android:textSize="17sp"
+        android:layout_marginBottom="16dp" />
+
+    <TextView
+        android:id="@+id/mostUsedText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="En çok kullanılan ruh hali: Yok"
+        android:textSize="17sp" />
+
+</LinearLayout>
