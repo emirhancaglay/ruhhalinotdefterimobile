@@ -62,7 +62,7 @@ public class MainActivity extends Activity {
         HttpURLConnection connection = null;
 
         try {
-            String urlText = "https://api.open-meteo.com/v1/forecast?latitude=41.0082&longitude=28.9784&current=temperature_2m,wind_speed_10m";
+            String urlText = "https://api.open-meteo.com/v1/forecast?latitude=41.0082&longitude=28.9784&current=temperature_2m,wind_speed_10m,weather_code";
             URL url = new URL(urlText);
             connection = (HttpURLConnection) url.openConnection();
             connection.setRequestMethod("GET");
@@ -87,9 +87,12 @@ public class MainActivity extends Activity {
             JSONObject current = jsonObject.getJSONObject("current");
             double temperature = current.getDouble("temperature_2m");
             double windSpeed = current.getDouble("wind_speed_10m");
+            int weatherCode = current.getInt("weather_code");
 
             String temperatureText = temperature + " °C";
-            String weatherInfo = "Sıcaklık: " + temperatureText + "\nRüzgar hızı: " + windSpeed + " km/sa";
+            String weatherInfo = "Durum: " + getWeatherDescription(weatherCode) +
+                    "\nSıcaklık: " + temperatureText +
+                    "\nRüzgar: " + windSpeed + " km/sa";
             return new String[]{weatherInfo, temperatureText};
         } catch (Exception e) {
             return new String[]{"Hava durumu alınamadı", "Bilinmiyor"};
@@ -98,5 +101,30 @@ public class MainActivity extends Activity {
                 connection.disconnect();
             }
         }
+    }
+
+    private String getWeatherDescription(int code) {
+        if (code == 0) {
+            return "Açık";
+        }
+        if (code <= 3) {
+            return "Parçalı bulutlu";
+        }
+        if (code == 45 || code == 48) {
+            return "Sisli";
+        }
+        if (code >= 51 && code <= 67) {
+            return "Yağmurlu";
+        }
+        if (code >= 71 && code <= 77) {
+            return "Karlı";
+        }
+        if (code >= 80 && code <= 82) {
+            return "Sağanak yağışlı";
+        }
+        if (code >= 95) {
+            return "Fırtınalı";
+        }
+        return "Bulutlu";
     }
 }

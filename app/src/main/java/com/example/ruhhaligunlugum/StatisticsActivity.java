@@ -38,12 +38,12 @@ public class StatisticsActivity extends Activity {
     }
 
     private void showStatistics() {
-        totalText.setText("Toplam günlük sayısı: " + databaseHelper.getTotalCount());
-        favoriteCountText.setText("Toplam favori günlük: " + databaseHelper.getFavoriteCount());
-        mutluText.setText("Mutlu: " + databaseHelper.getMoodCount("Mutlu"));
-        normalText.setText("Normal: " + databaseHelper.getMoodCount("Normal"));
-        yorgunText.setText("Yorgun: " + databaseHelper.getMoodCount("Yorgun"));
-        uzgunText.setText("Üzgün: " + databaseHelper.getMoodCount("Üzgün"));
-        mostUsedText.setText("En çok kullanılan ruh hali: " + databaseHelper.getMostUsedMood());
+        totalText.setText(String.valueOf(databaseHelper.getTotalCount()));
+        favoriteCountText.setText(String.valueOf(databaseHelper.getFavoriteCount()));
+        mutluText.setText(String.valueOf(databaseHelper.getMoodCount("Mutlu")));
+        normalText.setText(String.valueOf(databaseHelper.getMoodCount("Normal")));
+        yorgunText.setText(String.valueOf(databaseHelper.getMoodCount("Yorgun")));
+        uzgunText.setText(String.valueOf(databaseHelper.getMoodCount("Üzgün")));
+        mostUsedText.setText(databaseHelper.getMostUsedMood());
     }
 }

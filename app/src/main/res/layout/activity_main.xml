@@ -1,56 +1,84 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
-    android:padding="24dp"
-    android:background="#FFFFFF">
+    android:background="@color/screen_background"
+    android:fillViewport="true">
 
-    <TextView
-        android:id="@+id/titleText"
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Ruh Hali Not Defteri"
-        android:textSize="26sp"
-        android:textStyle="bold"
-        android:gravity="center"
-        android:layout_marginBottom="24dp" />
+        android:orientation="vertical"
+        android:padding="22dp">
 
-    <TextView
-        android:id="@+id/weatherTitleText"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Hava Durumu"
-        android:textSize="18sp"
-        android:textStyle="bold"
-        android:layout_marginBottom="8dp" />
+        <TextView
+            android:id="@+id/titleText"
+            style="@style/ScreenTitle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Ruh Hali Not Defteri"
+            android:layout_marginTop="12dp"
+            android:layout_marginBottom="6dp" />
 
-    <TextView
-        android:id="@+id/weatherText"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Hava durumu yükleniyor..."
-        android:textSize="16sp"
-        android:layout_marginBottom="28dp" />
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Günlük notlarını ve ruh halini kaydet"
+            android:textColor="@color/text_secondary"
+            android:textSize="15sp"
+            android:gravity="center"
+            android:layout_marginBottom="24dp" />
 
-    <Button
-        android:id="@+id/addButton"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Günlük Ekle"
-        android:layout_marginBottom="12dp" />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:background="@drawable/bg_weather_card"
+            android:padding="18dp"
+            android:layout_marginBottom="24dp">
 
-    <Button
-        android:id="@+id/listButton"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Günlüklerim"
-        android:layout_marginBottom="12dp" />
+            <TextView
+                android:id="@+id/weatherTitleText"
+                style="@style/SectionTitle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Bugünün Hava Durumu"
+                android:layout_marginBottom="10dp" />
 
-    <Button
-        android:id="@+id/statsButton"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="İstatistikler" />
+            <TextView
+                android:id="@+id/weatherText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Hava durumu yükleniyor..."
+                android:textColor="@color/text_primary"
+                android:textSize="16sp"
+                android:lineSpacingExtra="5dp" />
 
-</LinearLayout>
+        </LinearLayout>
+
+        <TextView
+            style="@style/SectionTitle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="İşlemler"
+            android:layout_marginBottom="12dp" />
+
+        <Button
+            android:id="@+id/addButton"
+            style="@style/PrimaryButton"
+            android:text="Günlük Ekle"
+            android:layout_marginBottom="12dp" />
+
+        <Button
+            android:id="@+id/listButton"
+            style="@style/SecondaryButton"
+            android:text="Günlüklerim"
+            android:layout_marginBottom="12dp" />
+
+        <Button
+            android:id="@+id/statsButton"
+            style="@style/SecondaryButton"
+            android:text="İstatistikler" />
+
+    </LinearLayout>
+</ScrollView>
